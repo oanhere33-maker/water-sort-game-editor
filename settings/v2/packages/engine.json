@@ -33,10 +33,10 @@
             "_value": true
           },
           "sorting-2d": {
-            "_value": false
+            "_value": true
           },
           "rich-text": {
-            "_value": false
+            "_value": true
           },
           "mask": {
             "_value": true
@@ -98,7 +98,7 @@
             "_value": false
           },
           "intersection-2d": {
-            "_value": false
+            "_value": true
           },
           "primitive": {
             "_value": false
@@ -116,7 +116,7 @@
             "_value": false
           },
           "particle-2d": {
-            "_value": false
+            "_value": true
           },
           "audio": {
             "_value": true
@@ -168,7 +168,7 @@
             "_value": false
           },
           "marionette": {
-            "_value": true
+            "_value": false
           },
           "procedural-animation": {
             "_value": false
@@ -200,10 +200,13 @@
           "custom-pipeline",
           "gfx-webgl",
           "graphics",
-          "marionette",
+          "intersection-2d",
           "mask",
+          "particle-2d",
           "profiler",
+          "rich-text",
           "skeletal-animation",
+          "sorting-2d",
           "tween",
           "ui",
           "ui-skew"

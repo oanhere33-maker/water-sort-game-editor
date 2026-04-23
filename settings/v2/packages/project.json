@@ -17,5 +17,6 @@
     "legacyFbxImporter": {
       "visible": true
     }
-  }
+  },
+  "custom_joint_texture_layouts": []
 }
