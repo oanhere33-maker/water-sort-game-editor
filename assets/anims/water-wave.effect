@@ -1,0 +1,106 @@
+#include <cc-global>
+#include <cc-local>
+#include <cc-sprite>
+
+CCEffect %{
+    techniques:
+    - passes:
+        - vert: vs:vert
+          frag: fs:frag
+          depthStencilState:
+            depthTest: false
+            depthWrite: false
+          blendState:
+            targets:
+            - blend: true
+              blendSrc: src_alpha
+              blendDst: one_minus_src_alpha
+              blendDstAlpha: one_minus_src_alpha
+          properties: &props
+            waveAmplitude: { value: 10 }
+            waveFrequency: { value: 50 }
+            waveSpeed: { value: 5.0 }
+            edgeDamping: { value: 1.0 }
+            time: { value: 0.0 }
+            randomSeed: {value: 0.0}
+            mainTexture: { value: white }
+}%
+
+CCProgram vs %{
+    precision highp float;
+    #include <cc-global>
+
+    uniform WaterEffectVS {
+        highp float waveAmplitude;
+        highp float waveFrequency;
+        highp float waveSpeed;
+        highp float edgeDamping;
+        highp float time;
+        highp float randomSeed;
+    };
+
+    in vec3 a_position;
+    in vec2 a_texCoord;  // 获取UV坐标
+    in vec4 a_color;
+
+    out vec4 v_color;
+    out vec2 v_texCoord;  // 传递UV到片段着色器
+    out float v_waveAmplitude;
+
+    float calcY() {
+        // 修改后的顶点着色器核心逻辑
+        float centerX = (a_texCoord.x - 0.5) * 2.0; // [-1,1]
+        float edgeFactor = 1.0 - pow(abs(centerX), edgeDamping);    // 计算边缘衰减因子。值越大→边缘衰减越平缓。
+        
+        // 基于垂直位置的区域划分
+        // 上半区过渡，当y < 0.45时返回0.0，当y > 0.55时返回1.0，在0.45-0.55区间生成平滑的Hermite插值曲线
+        float upperMask = smoothstep(0.45, 0.55, a_texCoord.y); 
+        float lowerMask = 1.0 - upperMask;
+        
+        // 基础波浪公式
+        float wave = sin(a_texCoord.y * waveFrequency + time * waveSpeed) * 
+                   cos((a_texCoord.x + randomSeed) * waveFrequency * 0.5) * waveAmplitude;
+        
+        // 上半区只允许正向位移
+        float upperDeform = wave * upperMask * edgeFactor;
+        upperDeform = max(0.0, upperDeform);
+        
+        // 下半区允许双向位移
+        float lowerDeform = wave * lowerMask * edgeFactor;
+        
+        // 最终位移应用
+        return  (upperDeform + lowerDeform) * 2.0;
+    }
+
+    vec4 vert() {
+        vec4 pos = vec4(a_position, 1.0);
+        if (waveAmplitude > 0.1) {
+            pos.y += calcY();
+        }
+        gl_Position = cc_matViewProj * pos;
+        v_texCoord = a_texCoord;
+        v_color = a_color;
+        return gl_Position;
+    }
+}%
+
+CCProgram fs %{
+    precision highp float;
+
+    in vec4 v_color;
+    in vec2 v_texCoord;
+    
+    uniform sampler2D mainTexture;  // 声明纹理采样器
+
+
+    vec4 frag() {
+        // 采样原纹理颜色（保留椭圆形状），并叠加基础颜色
+        vec4 texColor = texture(mainTexture, v_texCoord);
+
+        // 保持原始形状的alpha值，但应用水面颜色
+        vec4 finalColor = v_color;
+        finalColor.a = texColor.a;
+        
+        return finalColor;
+    }
+}%
