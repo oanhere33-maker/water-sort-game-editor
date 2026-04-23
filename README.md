@@ -5,13 +5,13 @@ This repository contains the source project and can be opened inside Cocos Creat
 
 ---
 
-🚀 **Play Water Sort Puzzle Game Online (No Download):**  
-👉 https://cocos.app/game/7/sort-water-now
+## 🎮 Play Online
 
-🧠 A relaxing and addictive browser puzzle game built with Cocos Creator.
+👉 **Play water sort puzzle game online:**
+https://cocos.app/game/7/sort-water-now
 
-🎮 More free HTML5 games:  
-👉 https://cocos.app
+👉 **More free browser games:**
+https://cocos.app
 
 ---
 
