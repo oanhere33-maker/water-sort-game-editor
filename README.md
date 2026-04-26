@@ -82,29 +82,9 @@ You need to open it using Cocos Creator.
 3. You can modify the movement distance in UiEdColumn.ts.
 ---
 
-## 🌐 Online Version
-
-This repository contains the source project.
-
-👉 To play the full browser version:
-https://cocos.app/game/7/sort-water-now
-
----
-
-## 🔗 Related Links
-
-* Play water sort puzzle game online:
-  https://cocos.app/game/7/sort-water-now
-
-* Free browser games platform:
-  https://cocos.app
-
----
-
 ## 📌 Keywords
 
 water sort puzzle, cocos creator game, html5 game, browser puzzle game, relaxing game
-
 ---
 
 ## 📄 License
