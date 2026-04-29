@@ -8,12 +8,13 @@ This repository contains the source project and can be opened inside Cocos Creat
 ## 🎮 Play Online
 
 👉 **Play water sort puzzle game online:**
-https://cocos.app/game/7/sort-water-now
+https://cocos.app/game/sort-water-now
 
 👉 **More free browser games:**
 https://cocos.app
 
 ---
+Need help solving water sort puzzle levels? This project includes a Cocos Creator level editor and helper workflow for creating, testing, and analyzing water sort puzzle levels.
 
 ## 📸 Screenshots
 
@@ -31,6 +32,19 @@ Water Sort Puzzle is a relaxing and addictive puzzle game where players need to 
 * Complete when all colors are sorted
 
 ---
+## 🧩 Water Sort Solver & Level Helper
+
+This project is not only a water sort puzzle game editor, but also a useful helper for testing water sort puzzle levels.
+
+You can use the editor to:
+
+- Create custom bottle layouts
+- Generate level data automatically
+- Test whether a water sort puzzle level is playable
+- Adjust columns, bottle count, and bottle positions
+- Copy level data for further analysis
+
+If you are looking for a water sort solver or water sort puzzle solver, this project can help you understand how levels are structured and tested.
 
 ## 🛠️ Built With
 
@@ -84,7 +98,7 @@ You need to open it using Cocos Creator.
 
 ## 📌 Keywords
 
-water sort puzzle, cocos creator game, html5 game, browser puzzle game, relaxing game
+water sort puzzle, water sort solver, water sort puzzle solver, water sort game editor, cocos creator game, html5 game, browser puzzle game, relaxing puzzle game
 ---
 
 ## 📄 License
