@@ -98,7 +98,7 @@ export class VwEdPlay extends VwPlay {
                 stageInfos.push(glassData);
             })
         })
-        
+
         // 对stageInfos进行排序，按y从大到小排，x从小到大排序
         stageInfos.sort((a, b) => {
             if (a.position.y != b.position.y) {
@@ -109,6 +109,45 @@ export class VwEdPlay extends VwPlay {
 
         // 保存关卡数据到文件
         this.ui.saveLevelData(stageInfos);
+
+        // 复制到剪贴板（Cocos Creator 3.x 兼容 Web/Electron）
+        const json = JSON.stringify(stageInfos, null, 2);
+        if (typeof navigator !== 'undefined' && navigator.clipboard) {
+            navigator.clipboard.writeText(json).then(() => {
+                console.log('关卡数据已复制到剪贴板');
+                if (typeof window !== 'undefined' && window.alert) {
+                    window.alert('Level data copied to clipboard!\nYou can use https://cocos.app/guide/sort-solver to solve the level.');
+                }
+            }).catch(err => {
+                console.warn('复制到剪贴板失败', err);
+            });
+        } else if (typeof window !== 'undefined' && (window as any).require) {
+            // 兼容 Electron/Node 环境
+            try {
+                const {clipboard} = (window as any).require('electron');
+                clipboard.writeText(json);
+                if (typeof window !== 'undefined' && window.alert) {
+                    window.alert('Level data copied to clipboard!\nYou can use https://cocos.app/guide/sort-solver to solve the level.');
+                }
+            } catch (e) {
+                console.warn('无法访问剪贴板', e);
+            }
+        } else if (typeof document !== 'undefined') {
+            // 兜底方案：创建临时 textarea
+            const textarea = document.createElement('textarea');
+            textarea.value = json;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                if (typeof window !== 'undefined' && window.alert) {
+                    window.alert('Level data copied to clipboard!\nYou can use https://cocos.app/guide/sort-solver to solve the level.');
+                }
+            } catch (e) {
+                console.warn('execCommand 复制失败', e);
+            }
+            document.body.removeChild(textarea);
+        }
     }
 
     protected openGame() {
