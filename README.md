@@ -48,7 +48,6 @@ The editor helps create and export level data, while the online solver page can 
 Related pages:
 
 - Water Sort JSON Solver: https://cocos.app/tools/sort-solver
-- Water Sort Solver Guide: https://cocos.app/guide/sort-solver
 - More Sort Puzzle Games: https://cocos.app/collection/sort-games
 
 ---
@@ -138,6 +137,14 @@ This project can be used as a starting point for:
 - Cocos Creator puzzle game prototypes
 
 ---
+## Live Demo
+
+A lightweight Replit demo is available here:
+
+https://water-sort-json-solver-demo--oanhere33.replit.app/
+
+This demo previews sample water sort puzzle JSON levels and shows basic solver steps.
+
 
 ## 📌 Keywords
 
