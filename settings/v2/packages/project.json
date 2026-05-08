@@ -5,7 +5,7 @@
       "width": 750,
       "height": 1334,
       "fitWidth": true,
-      "fitHeight": false
+      "fitHeight": true
     }
   },
   "script": {

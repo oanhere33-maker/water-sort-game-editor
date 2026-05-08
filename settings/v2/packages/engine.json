@@ -168,10 +168,10 @@
             "_value": false
           },
           "marionette": {
-            "_value": false
+            "_value": true
           },
           "procedural-animation": {
-            "_value": false
+            "_value": true
           },
           "custom-pipeline-post-process": {
             "_value": false
@@ -201,8 +201,10 @@
           "gfx-webgl",
           "graphics",
           "intersection-2d",
+          "marionette",
           "mask",
           "particle-2d",
+          "procedural-animation",
           "profiler",
           "rich-text",
           "skeletal-animation",

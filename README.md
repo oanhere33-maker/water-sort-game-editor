@@ -1,56 +1,63 @@
-# Water Sort Game Editor (Cocos Creator 3.8.6)
+# Water Sort Game Editor
 
-A water sort puzzle game editor project built with **Cocos Creator 3.8.6**.
-This repository contains the source project and can be opened inside Cocos Creator for editing and building.
+A Cocos Creator project for creating, editing, and testing water sort puzzle levels.
+
+This repository contains the source project for a water sort puzzle game editor. It is designed for building custom bottle layouts, generating level data, and testing water sort puzzle gameplay inside Cocos Creator.
+
+---
+
+## 📸 Screenshots
+
+![Water Sort Game Screenshot](image/img1.jpg)
+
+![Water Sort Game Gameplay](image/img2.jpg)
+
+---
+
+## 🧠 What This Project Does
+
+This project is a level editor and helper tool for water sort puzzle games.
+
+You can use it to:
+
+- Create custom bottle layouts
+- Generate water sort level data
+- Adjust bottle columns and positions
+- Test puzzle layouts during development
+- Copy level data for further editing or analysis
+- Build and preview the game with Cocos Creator
+
+It is useful for developers who want to study how water sort puzzle levels are structured, tested, and prepared for HTML5 browser games.
 
 ---
 
 ## 🎮 Play Online
 
-👉 **Play water sort puzzle game online:**
-https://cocos.app/game/sort-water-now
+You can try the browser version of the game here:
 
-👉 **More free browser games:**
-https://cocos.app
-
----
-Need help solving water sort puzzle levels? This project includes a Cocos Creator level editor and helper workflow for creating, testing, and analyzing water sort puzzle levels.
-
-## 📸 Screenshots
-
-![Water Sort Game Screenshot](image/img1.jpg)
-![Water Sort Game Gameplay](image/img2.jpg)
+👉 https://cocos.app/game/sort-water-now
 
 ---
 
-## 🧠 About the Game
+## 🧩 Water Sort Solver Workflow
 
-Water Sort Puzzle is a relaxing and addictive puzzle game where players need to sort colored liquids into separate tubes.
+This editor can also be used together with a water sort solver workflow.
 
-* Tap bottles to pour water
-* Only same colors can stack
-* Complete when all colors are sorted
+The editor helps create and export level data, while the online solver page can be used to test JSON-based puzzle layouts and explore possible solving steps.
+
+Related pages:
+
+- Water Sort JSON Solver: https://cocos.app/tools/sort-solver
+- Water Sort Solver Guide: https://cocos.app/guide/sort-solver
+- More Sort Puzzle Games: https://cocos.app/collection/sort-games
 
 ---
-## 🧩 Water Sort Solver & Level Helper
-
-This project is not only a water sort puzzle game editor, but also a useful helper for testing water sort puzzle levels.
-
-You can use the editor to:
-
-- Create custom bottle layouts
-- Generate level data automatically
-- Test whether a water sort puzzle level is playable
-- Adjust columns, bottle count, and bottle positions
-- Copy level data for further analysis
-
-If you are looking for a water sort solver or water sort puzzle solver, this project can help you understand how levels are structured and tested.
 
 ## 🛠️ Built With
 
-* Cocos Creator **3.8.6**
-* JavaScript / TypeScript
-* HTML5 (Web build supported)
+- Cocos Creator 3.8.6
+- TypeScript / JavaScript
+- HTML5 web build support
 
 ---
 
@@ -59,8 +66,8 @@ If you are looking for a water sort solver or water sort puzzle solver, this pro
 ```bash
 water-sort-game-editor/
 │
-├── assets/        # Game assets (scenes, scripts, resources)
-├── settings/      # Cocos project settings
+├── assets/        # Game assets, scenes, scripts, and resources
+├── settings/      # Cocos Creator project settings
 │
 ├── project.json
 ├── tsconfig.json
@@ -70,35 +77,72 @@ water-sort-game-editor/
 
 ---
 
-## 🚀 How to Run (Cocos Creator)
+## 🚀 How to Open the Project
 
-This project **cannot be run directly in browser**.
-You need to open it using Cocos Creator.
+This project cannot be run directly by opening an HTML file in the browser.
 
-### Columns
-1. You can generate between 1 and 8 columns.
+To use it:
 
-### Colors
-1. The number of colors is limited based on the number of bottles and layers.
+1. Install Cocos Creator.
+2. Open Cocos Creator.
+3. Choose **Open Project**.
+4. Select this repository folder.
+5. Open the main scene from the `assets` folder.
+6. Run the project in the Cocos Creator editor.
+7. Build a web version if you want to export it as an HTML5 game.
+
+---
+
+## 🧪 Editor Features
+
+### Column Settings
+
+The editor supports custom bottle column layouts.
+
+- Generate between 1 and 8 columns
+- Set how many bottles appear in each column
+- Adjust the vertical position of each column
+- Modify bottle movement distance in `UiEdColumn.ts`
+
+### Level Generation
+
+The editor can automatically generate level data based on the current bottle count and layer settings.
+
+- Generated level data appears in the top input box
+- Level data can be copied for testing or further editing
+- New levels include empty bottles by default
 
 ### Previous / Next Level
-1. You can switch between previous and next levels in the editor.
-2. The current level data will be displayed in the top input box.
-3. New levels will include 3 empty bottles by default.
 
-### Generate Level
-1. The system will automatically generate level data based on the current bottle count and layers.
-2. The generated data will appear in the top input box for copying.
+You can switch between previous and next levels inside the editor.
 
-### Column Settings (Count & Position)
-1. Buttons '0', '1', '2', '3', '4' represent how many bottles can be placed in the current column.
-2. Use '+' and '-' to adjust the vertical position of bottles in the column.
-3. You can modify the movement distance in UiEdColumn.ts.
+- The current level data is displayed in the top input box
+- You can review, copy, and adjust level data while testing
+
+### Colors and Bottles
+
+The number of colors is limited by the bottle count and layer count.
+
+This helps keep generated levels playable and easier to test during development.
+
+---
+
+## 🔗 Related Project Ideas
+
+This project can be used as a starting point for:
+
+- Water sort puzzle level design
+- Water sort puzzle solver experiments
+- JSON-based puzzle level testing
+- HTML5 puzzle game development
+- Cocos Creator puzzle game prototypes
+
 ---
 
 ## 📌 Keywords
 
-water sort puzzle, water sort solver, water sort puzzle solver, water sort game editor, cocos creator game, html5 game, browser puzzle game, relaxing puzzle game
+Water sort puzzle, water sort level editor, water sort solver, water sort puzzle solver, Cocos Creator puzzle game, HTML5 puzzle game, browser puzzle game.
+
 ---
 
 ## 📄 License
