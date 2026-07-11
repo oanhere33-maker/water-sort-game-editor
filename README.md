@@ -49,7 +49,7 @@ Related pages:
 
 - Water Sort JSON Solver: https://cocos.app/tools/sort-solver
 - More Sort Puzzle Games: https://cocos.app/collection/sort-games
-
+- Try the Daily Challenge: https://sortinggames.io/daily-water-sort/
 ---
 
 ## 🛠️ Built With

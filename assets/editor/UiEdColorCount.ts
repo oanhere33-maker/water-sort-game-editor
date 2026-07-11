@@ -31,7 +31,7 @@ export default class UiEdColorCount extends Component {
     }
 
     protected handleIncrement() {
-        if (this.count >= 8) {
+        if (this.count >= 9) {
             return;
         }
         this.count++;
